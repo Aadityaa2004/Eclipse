@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google"
 import "./globals.css";
-import Providers from "../app/ui/utility/providers";
+import Providers from "../components/ui/utility/providers";
 import React from "react";
-import NavBar from "@/app/components/navbar";
-import Footer from "@/app/components/footer";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 import { cn } from "@/lib/utils"
 
@@ -25,14 +25,14 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={cn("min-h-screen bg-background font-sans antialiased",fontSans.variable)}>
+			<body className={cn("bg-background font-sans antialiased", fontSans.variable)}>
 				<Providers>
 					<NavBar />
-					<div className="">
+					<div className="min-h-screen">
 						{children}
 					</div>
-					<Footer />
 				</Providers>
+				<Footer />
 			</body>
 		</html>
 	);
