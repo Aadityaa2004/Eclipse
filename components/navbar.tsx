@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import CartBtn from "@/components/CartBtn";
 
 const NavBar = () => {
   const path = usePathname();
@@ -78,11 +79,11 @@ const NavBar = () => {
         </div>
         <div className="hidden md:flex items-center justify-center gap-3">
               <button className="text-xs">
-                CART
-              </button>
-              <button className="text-xs">
                 LOG IN
               </button>
+              <Link className="text-xs" href={'/cart'}>
+                <CartBtn />
+              </Link>
         </div>
       </div>
       <div className="md:hidden flex items-center justify-between px-5 py-1">
