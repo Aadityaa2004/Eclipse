@@ -24,8 +24,8 @@ const CartItemCard = ({ cartItem }: Props) => {
           className="rounded-md"
         />
       </div>
-      <p className="text-white text-center">{cartItem.product.name}</p>
-      <div className="flex flex-col items-center justify-center gap-3 text-white">
+      <p className="text-black text-center">{cartItem.product.name}</p>
+      <div className="flex flex-col items-center justify-center gap-3 text-black">
         <p>{cartItem.product.price} $</p>
         <p>&#xd7;</p>
         <QtyBtn
@@ -34,7 +34,7 @@ const CartItemCard = ({ cartItem }: Props) => {
           onIncrease={() => dispatch(increment(cartItem.product))}
         />
       </div>
-      <p className="text-center text-white ">
+      <p className="text-center text-black ">
         {cartItem.quantity * cartItem.product.price} $
       </p>
     </div>

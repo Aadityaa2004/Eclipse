@@ -3,7 +3,8 @@ import Image from "next/image";
 import { dummyProducts } from "@/components/dummydata";
 import { Product } from "@/components/interface";
 import ProductCard from "@/components/ProductCard";
-
+import ContactForm from "./contact/page";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -12,6 +13,8 @@ export default function Home() {
       <Dashboard />
       <AboutUS />
       <NewIn />
+      {/* <ContactForm /> */}
+      <HandMade />
     </>
   )
 }
@@ -46,7 +49,7 @@ async function Dashboard() {
 
 function AboutUS() {
   return (
-    <section className="bg-[#0a0909] py-12">
+    <section className="bg-[#0b0b0a] py-12">
       <div className="max-w-screen-lg mx-auto p-5">
         <div className="bg-blac bg-opacity-50">
           <div className="text-xs font-bold text-zinc-200 text-left mb-1">ABOUT US</div>
@@ -93,5 +96,39 @@ function NewIn() {
       </section>
     </div>
   )
+}
+
+function HandMade() {
+  return (
+    <section className="bg-[#100f0f] py-12">
+      <div className="max-w-screen-lg mx-auto px-5">
+        <div className="text-xs font-bold text-zinc-200 text-left mb-2">UNBOX AN EXPERIENCE</div>
+        <div className="border border-zinc-200 mb-7 w-36"></div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-1">
+          <div className="">
+            <Image src="/unbox.jpeg" alt="new" height={300} width={300} />
+          </div>
+          <div className="flex flex-col">
+            <div className="text-md text-[#f8f6f6] font-bold mt-5 text-left">Embrace the Journey</div>
+            <div className="text-gray-300 text-sm font-extralight mt-3 max-w-screen-sm text-justify">
+              Dive deep into the essence of fashion, where every thread tells a story, and every design is a chapter in the book of elegance.
+              Embrace the journey of self-discovery through style, where the ordinary transforms into the extraordinary.
+            </div>
+            <div className="text-md text-[#f7f7f6] font-bold mt-5 text-left">Crafting Timeless Memories</div>
+            <div className="text-gray-300 text-sm font-extralight mt-3 max-w-screen-sm text-justify">
+              In a world where trends come and go, we focus on crafting timeless memories. Our pieces are more than just clothing; they are a reflection
+              of your personal journey and a testament to your unique story. Wear them with pride and let them speak volumes about who you are.
+            </div>
+            <div className="pb-2 mt-8">
+          <button className="bg-black text-xs border border-white text-white px-4 py-1 hover:bg-white hover:text-black hover:border-transparent transition duration-300">
+            SHOP NOW
+          </button>
+          {/* <AddToCartBtn product={product} /> */}
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
